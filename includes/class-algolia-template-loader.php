@@ -83,6 +83,15 @@ class Algolia_Template_Loader {
 			'query'              => get_search_query(),
 			'autocomplete'       => array(
 				'sources'        => $autocomplete_config->get_config(),
+
+				/**
+				 * Filters the CSS-style selector used to locate search inputs to add Autocomplete to.
+				 *
+				 * @since 1.0.0
+				 *
+				 * @param  string $value Selector to target with.
+				 * @return string $value Updated selector.
+				 */
 				'input_selector' => (string) apply_filters( 'algolia_autocomplete_input_selector', "input[name='s']:not(.no-autocomplete):not(#adminbar-search)" ),
 			),
 			'indices'            => array(),
@@ -99,6 +108,15 @@ class Algolia_Template_Loader {
 		}
 
 		// Give developers a last chance to alter the configuration.
+		/**
+		 * Filters the final result of the algolia config object to be used.
+		 * Gives developers one last change to alter the configuration.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param  array $config Array of configuration options
+		 * @return array $config Final configuration.
+		 */
 		$config = (array) apply_filters( 'algolia_config', $config );
 
 		echo '<script type="text/javascript">var algolia = ' . wp_json_encode( $config ) . ';</script>';
