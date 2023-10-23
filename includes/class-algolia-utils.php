@@ -153,11 +153,13 @@ class Algolia_Utils {
 		 * URL, width and height details for each image.
 		 *
 		 * @since 1.0.0
+		 * @since NEXT Added post_id as second parameter.
 		 *
-		 * @param  array $images Array of images data.
-		 * @return array $images Final array of images data.
+		 * @param  array $images  Array of images data.
+		 * @param  int   $post_id Current post ID being indexed.
+		 * @return array $images  Final array of images data.
 		 */
-		return (array) apply_filters( 'algolia_get_post_images', $images );
+		return (array) apply_filters( 'algolia_get_post_images', $images, $post_id );
 	}
 
 	/**
