@@ -260,7 +260,12 @@ class Algolia_Admin {
 
 			ob_start();
 			if ( $page <= $total_pages || 0 === $total_pages ) {
-				$index->re_index( $page );
+				try {
+					$index->re_index( $page );
+				} catch( Exception $exception ) {
+					echo esc_html( $exception->getMessage() );
+					throw $exception;
+				}
 			}
 			ob_end_clean();
 

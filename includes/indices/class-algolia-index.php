@@ -491,6 +491,7 @@ abstract class Algolia_Index {
 				$sanitized_records = $this->sanitize_json_data( $records );
 			} catch ( \Throwable $throwable ) {
 				error_log( $throwable->getMessage() ); // phpcs:ignore -- Need a real logger.
+				throw $throwable;
 			}
 		}
 
@@ -503,6 +504,7 @@ abstract class Algolia_Index {
 				$index->saveObjects( $sanitized_records );
 			} catch ( \Throwable $throwable ) {
 				error_log( $throwable->getMessage() ); // phpcs:ignore -- Need a real logger.
+				throw $throwable;
 			}
 		}
 
