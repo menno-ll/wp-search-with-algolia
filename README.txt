@@ -129,7 +129,7 @@ All development is handled on [GitHub](https://github.com/WebDevStudios/wp-searc
 Follow along with the changelog on [Github](https://github.com/WebDevStudios/wp-search-with-algolia/releases).
 
 = 2.9.0 =
-* Updated: MAJOR TEMPLATES UPDATE! Removed hogan.js/string-based templates in the Instantsearch.php template file. This includes removing the dependencies of wp-util and underscores libraries. You will need to re-enqueue those manually. Sorry for any inconvenience there.
+* Updated: MAJOR TEMPLATES UPDATE! Removed hogan.js/string-based templates in the Instantsearch.php template file. We're not removing the dependencies of wp-util and underscores libraries yet, for users with customized instantsearch.php that's still using the original style, but may in the future.
 * Added: ability to customize Default Headers for Algolia Search Client configuration.
 
 = 2.8.1 =
